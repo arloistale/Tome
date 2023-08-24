@@ -1,3 +1,5 @@
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
+
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
@@ -7,6 +9,8 @@ import { useState } from "react";
 import { useRef } from 'react';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
+
+import CodeEditor from './components/code-editor';
 
 const App = () => {
   const ref = useRef<any>();
@@ -67,6 +71,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <CodeEditor initialValue='console.log("Type some code in!");' onChange={(value) => setInput(value)}/>
       <textarea value={input} onChange={e => setInput(e.target.value)}></textarea>
       <div>
         <button onClick={onClick}>Submit</button>
