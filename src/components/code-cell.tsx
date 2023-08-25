@@ -7,12 +7,14 @@ import Resizable from './resizable';
 
 const CodeCell = () => {
   const [code, setCode] = useState("");
+  const [error, setError] = useState("");
   const [input, setInput] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(async () => {
       const result = await bundle(input);
-      setCode(result);
+      setCode(result.code);
+      setError(result.err);
     }, 750);
 
     return () => {
@@ -26,7 +28,7 @@ const CodeCell = () => {
       <Resizable direction="horizontal">
         <CodeEditor initialValue='console.log("Type some code in!");' onChange={(value) => setInput(value)}/>
       </Resizable>
-      <Preview code={code}/>
+      <Preview code={code} error={error}/>
     </div>
     </Resizable>
   );
