@@ -1,4 +1,4 @@
-A random piece of knowledge every day in a fun way.
+A random piece of aphorism, story, or quotation every day. Curated by Jon!
 
 ## Available Scripts
 
