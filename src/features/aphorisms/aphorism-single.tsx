@@ -5,16 +5,11 @@ import React, { useEffect } from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import getDateString from '../../util/date';
-import { fetchAphorismsAsync, mostRecentAphorism } from './aphorismsSlice';
+import { fetchAphorismsAsync, mostRecentPresentedAphorism } from './aphorismsSlice';
 
 const AphorismSingle = () => {
   const state = useAppSelector(state => state.aphorisms);
-  const mostRecent = useAppSelector(mostRecentAphorism);
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(fetchAphorismsAsync());
-  }, []);
+  const mostRecent = useAppSelector(mostRecentPresentedAphorism);
 
   switch (state.status) {
     case 'loading':
@@ -36,7 +31,7 @@ const AphorismSingle = () => {
       return (
         <div className='aphorism-single'>
           <div className='centered'>
-            <h1>{getDateString(mostRecent!.createdAt)}</h1>
+            <h1>{getDateString(mostRecent!.presentedAt!)}</h1>
           </div>
           <AphorismDisplay item={mostRecent!} />
         </div>

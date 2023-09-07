@@ -9,14 +9,23 @@ interface AphorismsState {
   status: 'idle' | 'loading' | 'failed'
 }
 
-export const mostRecentAphorism = (state: RootState) => {
+export function presentedAphorisms(state: RootState) {
   const items = state.aphorisms.items;
+  const presented = items.filter(e => e.presentedAt);
 
-  if (items.length === 0) {
-    return undefined;
+  presented.sort((a, b) => b.presentedAt!.getTime() - a.presentedAt!.getTime());
+
+  return presented;
+}
+
+export function mostRecentPresentedAphorism(state: RootState) {
+  const presented = presentedAphorisms(state);
+
+  if (presented.length === 0) {
+    return null;
   }
 
-  return items[0];
+  return presented[0];
 };
 
 const initialState: AphorismsState = { 
@@ -32,9 +41,9 @@ const initialState: AphorismsState = {
 export const fetchAphorismsAsync = createAsyncThunk(
   'aphorisms/fetch',
   async () => {
-    const response = await fetchAphorisms();
+    let response = await fetchAphorisms();
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response;
   }
 );
 

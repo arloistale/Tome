@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import getDateString from '../../util/date';
+import { fetchAphorismsAsync, presentedAphorisms } from './aphorismsSlice';
 
 const AphorismList = () => {
-  const state = useAppSelector(state => state.aphorisms);
+  const state = useAppSelector(presentedAphorisms);
 
-  const renderedCells = state.items.map(item => (
-    <React.Fragment>
-      <h1>{getDateString(item.createdAt)}</h1>
+  const renderedCells = state.map(item => (
+    <React.Fragment key={item.id}>
+      <h1>{getDateString(item.presentedAt!)}</h1>
       <AphorismDisplay item={item} />
     </React.Fragment>
   ));
