@@ -1,3 +1,5 @@
+import './app.css'
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AphorismSingle from "../aphorisms/aphorism-single";
 import Nav from "./nav";
@@ -5,6 +7,7 @@ import AphorismList from "../aphorisms/aphorism-list";
 import { useEffect } from "react";
 import { fetchAphorismsAsync } from "../aphorisms/aphorismsSlice";
 import { useAppDispatch } from "../../state/hooks";
+import Header from './header';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -14,12 +17,12 @@ const App = () => {
   }, []);
 
     return (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/history" element={<History />} />
-          </Routes>
-        </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/reflections" element={<Reflections />} />
+        </Routes>
+      </BrowserRouter>
     );
   }
   
@@ -27,15 +30,17 @@ const App = () => {
     return (
       <>
         <Nav />
+        <Header />
         <AphorismSingle />
       </>
     );
   };
   
-  const History = () => {
+  const Reflections = () => {
     return (
       <>
         <Nav />
+        <Header />
         <AphorismList />
       </>
     );

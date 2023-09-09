@@ -1,5 +1,3 @@
-import './aphorism-single.css';
-
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import getDateString from '../../util/date';
@@ -13,14 +11,11 @@ const AphorismSingle = () => {
     case 'loading':
       return <p>Loading...</p>
     case 'failed':
-      return <p>Failed to load aphorisms! Check console.</p>
+      return <p>Failed to load aphorisms: {state.errorMessage}</p>
     case 'idle':
       if (!mostRecent) {
         return (
           <div className='aphorism-single'>
-            <div className='centered'>
-              <h1>{getDateString(new Date())}</h1>
-            </div>
             <p>Something went wrong. No content found!</p>
           </div>
         );
@@ -28,9 +23,6 @@ const AphorismSingle = () => {
     
       return (
         <div className='aphorism-single'>
-          <div className='centered'>
-            <h1>{getDateString(mostRecent!.presentedAt!)}</h1>
-          </div>
           <AphorismDisplay item={mostRecent!} />
         </div>
       );

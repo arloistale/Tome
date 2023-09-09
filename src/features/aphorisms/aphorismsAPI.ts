@@ -1,10 +1,9 @@
 import type { TypedDocumentNode } from '@graphql-typed-document-node/core';
 import { Aphorism } from "./aphorism";
-import { parse } from "graphql";
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 
-//const api = "http://localhost:8000/graphql";
-const api = "https://jtome-backend.onrender.com/graphql/";
+const api = "http://localhost:8000/graphql";
+//const api = "https://jtome-backend.onrender.com/graphql/";
 
 const client = new ApolloClient({
   uri: api,

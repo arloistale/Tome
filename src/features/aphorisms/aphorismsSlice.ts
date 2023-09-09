@@ -6,6 +6,7 @@ import { RootState } from '../../state/store';
 
 interface AphorismsState {
   items: Aphorism[],
+  errorMessage: string | undefined,
   status: 'idle' | 'loading' | 'failed'
 }
 
@@ -30,6 +31,7 @@ export function mostRecentPresentedAphorism(state: RootState) {
 
 const initialState: AphorismsState = { 
   items: [],
+  errorMessage: undefined,
   status: 'idle'
 };
 
@@ -59,14 +61,17 @@ const aphorismsSlice = createSlice({
     builder
       .addCase(fetchAphorismsAsync.pending, state => {
         state.status = 'loading';
+        state.errorMessage = undefined
         state.items = [];
       })
       .addCase(fetchAphorismsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
+        state.errorMessage = undefined
         state.items = action.payload;
       })
-      .addCase(fetchAphorismsAsync.rejected, state => {
+      .addCase(fetchAphorismsAsync.rejected, (state, action) => {
         state.status = 'failed';
+        state.errorMessage = action.error.message
         state.items = [];
       });
   }
