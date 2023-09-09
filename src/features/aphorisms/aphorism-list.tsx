@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import getDateString from '../../util/date';
-import { fetchAphorismsAsync, presentedAphorisms } from './aphorismsSlice';
+import { presentedAphorisms } from './aphorismsSlice';
 
 const AphorismList = () => {
   const state = useAppSelector(presentedAphorisms);

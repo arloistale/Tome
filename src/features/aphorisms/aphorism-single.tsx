@@ -1,11 +1,9 @@
 import './aphorism-single.css';
 
-import { useAppDispatch } from '../../state/hooks';
-import React, { useEffect } from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import getDateString from '../../util/date';
-import { fetchAphorismsAsync, mostRecentPresentedAphorism } from './aphorismsSlice';
+import { mostRecentPresentedAphorism } from './aphorismsSlice';
 
 const AphorismSingle = () => {
   const state = useAppSelector(state => state.aphorisms);
