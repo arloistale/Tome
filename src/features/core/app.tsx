@@ -7,7 +7,8 @@ import AphorismList from "../aphorisms/aphorism-list";
 import { useEffect } from "react";
 import { fetchAphorismsAsync } from "../aphorisms/aphorismsSlice";
 import { useAppDispatch } from "../../state/hooks";
-import Header from './header';
+import TodayIsHeader from './today-is-hero';
+import AboutHeader from './about-hero';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -30,8 +31,16 @@ const App = () => {
     return (
       <>
         <Nav />
-        <Header />
-        <AphorismSingle />
+        <TodayIsHeader />
+        <div className='columns'>
+          <div className='column'> </div>
+          <div className='column is-three-quarters'>
+            <section className='section'>
+              <AphorismSingle />
+            </section>
+          </div>
+          <div className='column'> </div>
+        </div>
       </>
     );
   };
@@ -40,8 +49,16 @@ const App = () => {
     return (
       <>
         <Nav />
-        <Header />
-        <AphorismList />
+        <AboutHeader />
+        <div className='columns'>
+          <div className='column'></div>
+          <div className='column is-three-quarters'>
+            <section className='section'>
+              <AphorismList />
+            </section>
+          </div>
+          <div className='column'></div>
+        </div>
       </>
     );
   };

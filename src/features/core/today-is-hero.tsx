@@ -1,6 +1,6 @@
 import getDateString from "../../util/date";
 
-const Header = () => {
+const TodayIsHeader = () => {
     return (
       <>
         <section className='hero is-primary'>
@@ -14,4 +14,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default TodayIsHeader;
