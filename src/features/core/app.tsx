@@ -1,14 +1,10 @@
 import './app.css'
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AphorismSingle from "../aphorisms/aphorism-single";
-import Nav from "./nav";
-import AphorismList from "../aphorisms/aphorism-list";
 import { useEffect } from "react";
 import { fetchAphorismsAsync } from "../aphorisms/aphorismsSlice";
 import { useAppDispatch } from "../../state/hooks";
-import TodayIsHeader from './today-is-hero';
-import AboutHeader from './about-hero';
+import { About, Home, Reflections } from './pages';
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -22,45 +18,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/reflections" element={<Reflections />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     );
   }
-  
-  const Home = () => {
-    return (
-      <>
-        <Nav />
-        <TodayIsHeader />
-        <div className='columns'>
-          <div className='column'> </div>
-          <div className='column is-three-quarters'>
-            <section className='section'>
-              <AphorismSingle />
-            </section>
-          </div>
-          <div className='column'> </div>
-        </div>
-      </>
-    );
-  };
-  
-  const Reflections = () => {
-    return (
-      <>
-        <Nav />
-        <AboutHeader />
-        <div className='columns'>
-          <div className='column'></div>
-          <div className='column is-three-quarters'>
-            <section className='section'>
-              <AphorismList />
-            </section>
-          </div>
-          <div className='column'></div>
-        </div>
-      </>
-    );
-  };
 
 export default App;

@@ -9,10 +9,17 @@ interface AphorismDisplayProps {
 const AphorismDisplay: React.FC<AphorismDisplayProps> = ({ item }) => {
     return ( 
         <div className="card">
-          <h1>{item.presentedAt ? getDateString(item.presentedAt) : ""}</h1>
           <div className="card-content">
-            <h1>{item.title || 'Empty string.' }</h1>
-            <MDEditor.Markdown source={item.content || 'Empty string.'} />
+            <div className='media'>
+              <div className='media-content'>
+                <p className='title is-3'>{item.title || 'Empty string.' }</p>
+                <p className='subtitle is-6'>{item.presentedAt ? getDateString(item.presentedAt) : ""}</p>
+              </div>
+            </div>
+
+            <div className='content'>
+              <MDEditor.Markdown source={item.content || 'Empty string.'}/>
+            </div>
           </div>
         </div>
       );
