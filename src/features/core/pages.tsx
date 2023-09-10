@@ -5,14 +5,15 @@ import ReflectionsHero from "./reflections-hero";
 import Nav from "./nav";
 import TodayIsHero from "./today-is-hero";
 import AboutHero from "./about-hero";
+import Footer from "./footer";
 
 export const Home = () => {
     return (
-      <>
+      <div className="page-container">
         <Nav />
         <TodayIsHero />
         <div className='columns'>
-          <div className='column'> </div>
+          <div className='column'></div>
           <div className='column is-three-quarters'>
             <section className='section'>
               <AphorismSingle />
@@ -20,13 +21,14 @@ export const Home = () => {
           </div>
           <div className='column'> </div>
         </div>
-      </>
+        <Footer />
+      </div>
     );
   };
 
 export const Reflections = () => {
     return (
-      <>
+      <div className="page-container">
         <Nav />
         <ReflectionsHero />
         <div className='columns'>
@@ -38,13 +40,14 @@ export const Reflections = () => {
           </div>
           <div className='column'></div>
         </div>
-      </>
+        <Footer />
+      </div>
     );
   };
 
 export const About = () => {
   return (
-    <>
+    <div className="page-container">
       <Nav />
       <AboutHero />
       <div className='columns'>
@@ -81,6 +84,7 @@ export const About = () => {
           </div>
           <div className='column'></div>
       </div>
-    </>
+      <Footer />
+    </div>
   );
 }
