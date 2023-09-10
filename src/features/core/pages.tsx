@@ -72,6 +72,8 @@ export const About = () => {
                 <p>Please see the following links for more information about Jon Lu</p>
                 <ul>
                   <li><a href='https://github.com/arloistale' target='_blank'>Github</a></li>
+                  <li><a href='https://github.com/arloistale/Tome' target='_blank'>Website Frontend</a></li>
+                  <li><a href='https://github.com/arloistale/TomeBackend' target='_blank'>Website Backend</a></li>
                   <li><a href='https://www.linkedin.com/in/mrcornman/' target='_blank'>LinkedIn</a></li>
                 </ul>
               </div>
