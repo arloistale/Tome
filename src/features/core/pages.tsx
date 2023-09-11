@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import AphorismList from "../aphorisms/aphorism-list";
 import AphorismSingle from "../aphorisms/aphorism-single";
 import ReflectionsHero from "./reflections-hero";
