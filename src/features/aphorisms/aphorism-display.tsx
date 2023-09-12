@@ -1,6 +1,6 @@
+import ReactMarkdown from 'react-markdown';
 import getDateString from '../../util/date';
 import { Aphorism } from './aphorism';
-import MDEditor from '@uiw/react-md-editor';
 
 interface AphorismDisplayProps {
     item: Aphorism;
@@ -18,7 +18,7 @@ const AphorismDisplay: React.FC<AphorismDisplayProps> = ({ item }) => {
             </div>
 
             <div className='content'>
-              <MDEditor.Markdown source={item.content || 'Empty string.'}/>
+              <ReactMarkdown>{item.content || 'Empty string.'}</ReactMarkdown>
             </div>
           </div>
         </div>
