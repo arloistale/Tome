@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchAphorismsAsync());
-  }, []);
+  }, [dispatch]);
 
     return (
       <div className="page-container">
