@@ -19,8 +19,8 @@ const About = () => {
                   <ul>
                     <li>Frontend: React, Redux, Apollo GraphQL, Typescript, HTML, CSS</li>
                     <li>Backend: FastAPI, Strawberry GraphQL, Python</li>
-                    <li>Database: Supabase Postgresql</li>
-                    <li>Other: Docker, Git, Render</li>
+                    <li>Database: Supabase PostgreSQL</li>
+                    <li>Other: Docker, AWS Lambda, Git, Netlify, Fly.io</li>
                   </ul>
                   <h1>Links</h1>
                   <p>Please see the following links for more information about Jon Lu.</p>
