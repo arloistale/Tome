@@ -1,4 +1,4 @@
-import 'bulmaswatch/simplex/bulmaswatch.min.css';
+import './index.scss'
 
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux';
