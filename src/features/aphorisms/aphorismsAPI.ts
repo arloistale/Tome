@@ -3,7 +3,8 @@ import { Aphorism } from "./aphorism";
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { isDev } from '../../util/is-dev';
 
-const api = isDev() ? "http://localhost:8000/graphql" : "https://jtome-backend.onrender.com/graphql/";
+const productionApiUrl = "https://tome-backend.fly.dev/graphql";
+const api = isDev() ? "http://localhost:8000/graphql" : productionApiUrl;
 
 const client = new ApolloClient({
   uri: api,
