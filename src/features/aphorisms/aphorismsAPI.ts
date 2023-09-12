@@ -39,6 +39,8 @@ function deserializeAphorism(aphorism: GraphQL_Aphorism) {
   }
 }
 
+// TODO: In the future we may need to add a timezone parameter, to make sure that based on locale it only fetches
+// presented aphorisms up to the local date. In the current setup, at 8:05PM ETC on Sep 12 we will see the newest aphorism for Sep 13.
 export async function fetchAphorisms(): Promise<Aphorism[]> {
   const result = await client.query({
     query: aphorismsQuery
