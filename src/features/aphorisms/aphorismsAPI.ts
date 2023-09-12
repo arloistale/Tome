@@ -51,6 +51,5 @@ export async function fetchAphorisms(): Promise<Aphorism[]> {
   }
 
   const converted = result.data.aphorisms.map(e => deserializeAphorism(e));
-  console.log(converted);
   return converted;
 }
