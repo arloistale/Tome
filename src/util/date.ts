@@ -1,6 +1,8 @@
-export default function getDateString(date: Date) {
+
+export default function getDateString(date: Date, timeZone?: string | undefined) {
+
     const options: Intl.DateTimeFormatOptions = { 
-      timeZone: 'UTC', // we want to show the UTC date because that is new aphorisms are presented at 00:05 UTC
+      timeZone: timeZone,
       weekday: 'long', 
       year: 'numeric', 
       month: 'long', 

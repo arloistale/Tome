@@ -6,6 +6,7 @@ interface AphorismDisplayProps {
     item: Aphorism;
 }
 
+// the UTC-zoned date of the aphorism is accurate to show, because aphorisms are presented at 00:05 UTC
 const AphorismDisplay: React.FC<AphorismDisplayProps> = ({ item }) => {
     return ( 
         <div className="card">
@@ -13,7 +14,7 @@ const AphorismDisplay: React.FC<AphorismDisplayProps> = ({ item }) => {
             <div className='media'>
               <div className='media-content'>
                 <p className='title is-3'>{item.title || 'Empty string.' }</p>
-                <p className='subtitle is-6'>{item.presentedAt ? getDateString(item.presentedAt) : ""}</p>
+                <p className='subtitle is-6'>{item.presentedAt ? getDateString(item.presentedAt, 'UTC') : ""}</p>
               </div>
             </div>
 
