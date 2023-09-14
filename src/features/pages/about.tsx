@@ -15,7 +15,7 @@ const About = () => {
                   </ol>
                   <p>An algorithm chooses the daily writing using a weighted random algorithm. The writings are curated by Jon Lu, a software engineer and writer living in Brooklyn. </p>
                   <h1>How it was made</h1>
-                  <p>This website is a pet web development project. It was made using the following tech stack:</p>
+                  <p>This website uses the following tech stack:</p>
                   <ul>
                     <li>Frontend: React, Redux, Apollo GraphQL, Typescript, HTML, CSS</li>
                     <li>Backend: FastAPI, Strawberry GraphQL, Python</li>
