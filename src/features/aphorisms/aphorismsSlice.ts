@@ -16,7 +16,7 @@ export function presentedAphorisms(state: RootState) {
 
   presented.sort((a, b) => b.presentedAt!.getTime() - a.presentedAt!.getTime());
 
-  return presented.slice(0, 10);
+  return presented;
 }
 
 export function mostRecentPresentedAphorism(state: RootState) {

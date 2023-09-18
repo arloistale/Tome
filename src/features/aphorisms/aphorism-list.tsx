@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import { presentedAphorisms } from './aphorismsSlice';
 
 const AphorismList = () => {
+  const ITEMS_PER_PAGE = 5; // You can adjust this value based on your preference
   const state = useAppSelector(state => state.aphorisms);
   const presented = useAppSelector(presentedAphorisms);
 
-  const renderedCells = presented.map(item => (
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(presented.length / ITEMS_PER_PAGE);
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const displayedItems = presented.slice(startIndex, endIndex);
+
+  const renderedCells = displayedItems.map(item => (
     <React.Fragment key={item.id}>
       <AphorismDisplay item={item} />
     </React.Fragment>
@@ -21,7 +41,17 @@ const AphorismList = () => {
     case 'idle':
       return (
         <div>
-          {renderedCells}
+          <div className='mb-4'
+            {renderedCells}
+          </div>
+          <nav className='pagination is-centered' role='navigation' aria-label="pagination">
+            {currentPage > 1 && (
+              <a className="pagination-previous" onClick={handlePreviousPage}>Previous</a>
+            )}
+            {currentPage < totalPages && (
+              <a className="pagination-next" onClick={handleNextPage}>Next</a>
+            )}
+          </nav>
         </div>
       );
   }
