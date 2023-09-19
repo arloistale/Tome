@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
 import { presentedAphorisms } from './aphorismsSlice';
@@ -25,6 +25,10 @@ const AphorismList = () => {
   const displayedItems = presented.slice(startIndex, endIndex);
 
   const renderedCells = displayedItems.map(item => <AphorismDisplay key={item.id} item={item} />);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   switch (status) {
     case 'loading':
