@@ -41,7 +41,7 @@ const AphorismList = () => {
     case 'idle':
       return (
         <div>
-          <div className='mb-4'
+          <div className='mb-4'>
             {renderedCells}
           </div>
           <nav className='pagination is-centered' role='navigation' aria-label="pagination">
