@@ -14,12 +14,14 @@ const AphorismList = () => {
   const handlePreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+      window.scrollTo(0, 0); 
     }
   };
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
+      window.scrollTo(0, 0); 
     }
   };
 
@@ -46,10 +48,10 @@ const AphorismList = () => {
           </div>
           <nav className='pagination is-centered' role='navigation' aria-label="pagination">
             {currentPage > 1 && (
-              <a className="pagination-previous" onClick={handlePreviousPage}>Previous</a>
+              <a className="pagination-previous" role="button" aria-label='Go to previous page' onClick={handlePreviousPage}>Previous</a>
             )}
             {currentPage < totalPages && (
-              <a className="pagination-next" onClick={handleNextPage}>Next</a>
+              <a className="pagination-next" role="button" aria-label='Go to next page' onClick={handleNextPage}>Next</a>
             )}
           </nav>
         </div>
