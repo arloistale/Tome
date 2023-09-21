@@ -1,5 +1,5 @@
 import ReactMarkdown from 'react-markdown';
-import getDateString from '../../util/date';
+import { getShortDateString } from '../../util/date';
 import { Aphorism } from './aphorism';
 
 interface AphorismDisplayProps {
@@ -14,7 +14,7 @@ const AphorismDisplay: React.FC<AphorismDisplayProps> = ({ item }) => {
             <div className='media'>
               <div className='media-content'>
                 <p className='title is-3'>{item.title || 'Empty string.' }</p>
-                <p className='subtitle is-6'>{item.presentedAt ? getDateString(item.presentedAt, 'UTC') : ""}</p>
+                <p className='subtitle is-6'>Shown {item.presentedAt ? getShortDateString(item.presentedAt, 'UTC') : ""}</p>
               </div>
             </div>
 
