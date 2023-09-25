@@ -6,14 +6,14 @@ const About = () => {
             <div className='column is-three-quarters'>
               <section className='section'>
                 <div className="content">
-                  <p>Each day, this website showcases a reflection from various sources, including:</p>
+                  <p>This website showcases daily reflections from various sources, including:</p>
                   <ol>
                     <li>The Enchiridion by Epitectus</li>
                     <li>Tao Te Ching by Laozi</li>
                     <li>The Art of War by Sun Tzu</li>
                     <li>The Comfort Book by Matt Haig</li>
                   </ol>
-                  <p>An algorithm chooses the daily writing using a weighted random algorithm. The writings are curated by Jon Lu, a software engineer and writer living in Brooklyn. </p>
+                  <p>An algorithm chooses a new daily reflection every day at 12:05AM UTC/8:05PM EST. The writings are curated by Jon Lu, a software engineer and writer living in Brooklyn. </p>
                   <h1>How it was made</h1>
                   <p>This website uses the following tech stack:</p>
                   <ul>
