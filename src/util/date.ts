@@ -3,8 +3,7 @@ export function getLongDateString(date: Date, timeZone?: string | undefined) {
 
     const options: Intl.DateTimeFormatOptions = { 
       timeZone: timeZone,
-      weekday: 'long', 
-      year: 'numeric', 
+      weekday: 'long',
       month: 'long', 
       day: 'numeric'
     };
