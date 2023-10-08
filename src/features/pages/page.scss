@@ -10,3 +10,7 @@
 @import "bulma/sass/components/media";
 
 @import "bulma/sass/grid/columns";
+
+.media-content {
+    overflow: hidden;
+}

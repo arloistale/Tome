@@ -1,5 +1,3 @@
-import './app.css'
-
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { fetchAphorismsAsync } from "../aphorisms/aphorismsSlice";
