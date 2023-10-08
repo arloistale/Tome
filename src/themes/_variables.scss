@@ -23,7 +23,7 @@ $danger: $orange;
 $orange-invert: #fff;
 $warning-invert: $orange-invert;
 
-$family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $body-size: 14px;
 
 $navbar-background-color: $primary;
@@ -32,8 +32,6 @@ $navbar-item-hover-color: #fff;
 $navbar-item-active-color: #fff;
 $navbar-item-hover-background-color: rgba(#000, 0.1);
 $navbar-dropdown-arrow: $navbar-item-color;
-
-$bulmaswatch-import-font: true !default;
 
 $box-shadow: 0 0 0 1px $grey-lighter;
 $card-shadow: 0 0 0 1px $grey-lighter;
