@@ -12,8 +12,8 @@ const Reflections = lazy(() => import('../pages/reflections'));
 const About = lazy(() => import('../pages/about'));
 
 const Fallback = () => {
-  return <>...</>
-}
+  return <></>;
+};
 
 const App = () => {
   const dispatch = useAppDispatch();
