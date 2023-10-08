@@ -34,9 +34,9 @@ const AphorismList = () => {
 
   switch (status) {
     case 'loading':
-      return <p>Loading...</p>
+      return <></>;
     case 'failed':
-      return <p>Failed to load aphorisms: {errorMessage}</p>
+      return <p>Failed to load aphorisms: {errorMessage}</p>;
     case 'idle':
       return (
         <div>

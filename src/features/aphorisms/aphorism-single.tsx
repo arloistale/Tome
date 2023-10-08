@@ -8,9 +8,9 @@ const AphorismSingle = () => {
 
   switch (state.status) {
     case 'loading':
-      return <p>Loading...</p>
+      return <></>;
     case 'failed':
-      return <p>Failed to load aphorisms: {state.errorMessage}</p>
+      return <p>Failed to load aphorisms: {state.errorMessage}</p>;
     case 'idle':
       if (!mostRecent) {
         return <p>Something went wrong. No content found!</p>;
