@@ -1,3 +1,5 @@
+import './aphorism-list.scss'
+
 import { useEffect } from 'react';
 import { useAppSelector } from '../../state/hooks';
 import AphorismDisplay from './aphorism-display';
