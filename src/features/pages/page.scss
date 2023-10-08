@@ -1,0 +1,15 @@
+@import '../../themes/variables';
+
+@import "bulma/sass/utilities/_all";
+
+@import "bulma/sass/layout/hero";
+@import "bulma/sass/layout/section";
+
+@import "bulma/sass/components/card";
+@import "bulma/sass/components/media";
+
+@import "bulma/sass/grid/columns";
+
+.media-content {
+    overflow: hidden;
+}
