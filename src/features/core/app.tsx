@@ -23,7 +23,7 @@ const App = () => {
   }, [dispatch]);
 
     return (
-      <div className="page-container">
+      <div className="page-container is-flex is-flex-direction-column">
         <Nav />
         <Routes>
           <Route path="/" element={<Suspense fallback=<Fallback />><Home /></Suspense>} />
