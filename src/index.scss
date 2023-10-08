@@ -1,6 +1,4 @@
-$bulmaswatch-import-font: false;
-
-@import 'node_modules/bulmaswatch/simplex/bulmaswatch';
+@import "themes/simplex";
 
 body {
     overflow-x: hidden;
