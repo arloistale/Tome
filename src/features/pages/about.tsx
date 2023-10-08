@@ -21,6 +21,7 @@ const About = () => {
                     <li>The Comfort Book by Matt Haig</li>
                   </ol>
                   <p>An algorithm chooses a new daily reflection every day at 12:05AM UTC/8:05PM EST. The writings are curated by Jon Lu, a software engineer and writer living in Brooklyn. </p>
+                  <p>If you'd like to submit a piece, send it via <a href="mailto:jonathanlu321@gmail.com" rel="noopener noreferrer" target='_blank'>Email</a>!</p>
                   <h1>How it was made</h1>
                   <p>This website uses the following tech stack:</p>
                   <ul>
