@@ -23,15 +23,20 @@ $danger: $orange;
 $orange-invert: #fff;
 $warning-invert: $orange-invert;
 
-$family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $body-size: 14px;
 
 $navbar-background-color: $primary;
-$navbar-item-color: rgba(#fff, 0.7);
+$navbar-item-color: #fff;
 $navbar-item-hover-color: #fff;
 $navbar-item-active-color: #fff;
 $navbar-item-hover-background-color: rgba(#000, 0.1);
 $navbar-dropdown-arrow: $navbar-item-color;
+
+$hero-colors: (
+    "primary": ($primary-dark, white),
+    "secondary": ($primary-dark, white)
+);
 
 $box-shadow: 0 0 0 1px $grey-lighter;
 $card-shadow: 0 0 0 1px $grey-lighter;
