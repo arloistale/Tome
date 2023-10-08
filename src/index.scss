@@ -2,15 +2,21 @@
 
 @import "bulma/sass/utilities/_all";
 @import "bulma/sass/helpers/_all";
+@import "bulma/sass/layout/_all";
 @import "bulma/sass/base/_all";
-
-@import "bulma/sass/layout/footer";
 
 @import "bulma/sass/components/navbar";
 
+@import "bulma/sass/components/card";
+@import "bulma/sass/components/media";
+
 @import "bulma/sass/elements/container";
+
 @import "bulma/sass/elements/content";
+
 @import "bulma/sass/elements/title";
+
+@import "bulma/sass/grid/columns";
 
 body {
     overflow-x: hidden;
@@ -20,4 +26,8 @@ body {
     .navbar-brand {
         justify-content: center;
     }
+}
+
+.media-content {
+    overflow: hidden;
 }

@@ -1,5 +1,3 @@
-import './page.scss'
-
 import AphorismSingle from "../aphorisms/aphorism-single";
 import { getLongDateString } from "../../util/date";
 

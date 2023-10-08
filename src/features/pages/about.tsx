@@ -1,5 +1,3 @@
-import './page.scss'
-
 const About = () => {
     return (
       <>

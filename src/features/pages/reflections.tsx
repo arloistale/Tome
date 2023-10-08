@@ -1,5 +1,3 @@
-import './page.scss'
-
 import AphorismList from "../aphorisms/aphorism-list";
 
 const Reflections = () => {
