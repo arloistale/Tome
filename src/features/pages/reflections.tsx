@@ -1,4 +1,4 @@
-import './aphorism-page.scss';
+import './page.scss';
 
 import AphorismList from "../aphorisms/aphorism-list";
 
