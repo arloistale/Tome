@@ -18,7 +18,9 @@ const AphorismDisplay: React.FC<AphorismDisplayProps> = ({ item }) => {
               </div>
             </div>
 
-            <ReactMarkdown>{item.content}</ReactMarkdown>
+            <div className="content">
+              <ReactMarkdown>{item.content}</ReactMarkdown>
+            </div>
           </div>
         </div>
       );
