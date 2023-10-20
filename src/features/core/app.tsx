@@ -2,8 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy, useEffect } from "react";
 import { fetchAphorismsAsync } from "../aphorisms/aphorismsSlice";
 import { useAppDispatch } from "../../state/hooks";
-import Nav from './nav';
-import Footer from './footer';
+import PageLayout from "../pages/page-layout";
 
 const Home = lazy(() => import('../pages/home'));
 const Reflections = lazy(() => import('../pages/reflections'));
@@ -21,15 +20,13 @@ const App = () => {
   }, [dispatch]);
 
     return (
-      <div className="page-container is-flex is-flex-direction-column">
-        <Nav />
+      <>
         <Routes>
-          <Route path="/" element={<Suspense fallback=<Fallback />><Home /></Suspense>} />
-          <Route path="/reflections" element={<Suspense fallback=<Fallback />><Reflections /></Suspense>} />
-          <Route path="/about" element={<Suspense fallback=<Fallback />><About /></Suspense>} />
+          <Route path="/" element={<Suspense fallback=<Fallback />><PageLayout><Home /></PageLayout></Suspense>} />
+          <Route path="/reflections" element={<Suspense fallback=<Fallback />><PageLayout><Reflections /></PageLayout></Suspense>} />
+          <Route path="/about" element={<Suspense fallback=<Fallback />><PageLayout><About /></PageLayout></Suspense>} />
         </Routes>
-        <Footer />
-      </div>
+      </>
     );
   }
 
